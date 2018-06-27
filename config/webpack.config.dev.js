@@ -82,7 +82,7 @@ module.exports = {
     // https://github.com/facebookincubator/create-react-app/issues/290
     // `web` extension prefixes have been added for better support
     // for React Native Web.
-    extensions: ['.web.js', '.mjs', '.js', '.json', '.web.jsx', '.jsx'],
+    extensions: ['.web.js', '.mjs', '.js', '.json', '.web.jsx', '.jsx', '.purs'],
     alias: {
       
       // Support React Native Web
@@ -187,6 +187,16 @@ module.exports = {
                 },
               },
             ],
+          },
+          {
+            test: /\.purs$/,
+            loader: 'purs-loader',
+            exclude: /node_modules/,
+            options: {
+              psc: 'psa',
+              watch: true,
+              src: ['src/**/*.purs']
+            }
           },
           // "file" loader makes sure those assets get served by WebpackDevServer.
           // When you `import` an asset, you get its (virtual) filename.
