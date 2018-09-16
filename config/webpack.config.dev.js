@@ -189,7 +189,7 @@ module.exports = {
             options: {
               psc: 'psa',
               watch: true,
-              src: ['src/**/*.purs']
+              src: ['.psc-package/**/*.purs', 'src/**/*.purs']
             }
           },
           // "file" loader makes sure those assets get served by WebpackDevServer.
